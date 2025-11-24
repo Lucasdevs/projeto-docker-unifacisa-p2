@@ -1,0 +1,13 @@
+const express = require("express")
+const app = express()
+
+const PORT = process.env.PORT || 4000
+const SERVICE_NAME = process.env.SERVICE_NAME || "Service B Default"
+
+app.get("/", (req, res) => {
+  res.json({ microservice: "B", service: SERVICE_NAME })
+})
+
+app.listen(PORT, () => {
+  console.log(`Microservice B rodando na porta ${PORT}`)
+})
